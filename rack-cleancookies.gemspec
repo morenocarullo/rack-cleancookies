@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "rack-cleancookies"
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Moreno Carullo"]
   s.summary     = 'Clean dirty cookies from Rack environment'
