@@ -24,8 +24,9 @@ module Rack
     module_function :clean?
 
     class Middleware
-      def initialize(app)
+      def initialize(app, options={verbose: false})
         @app = app
+        @options = options
       end
 
       def call(env)
@@ -45,7 +46,7 @@ module Rack
           env['HTTP_COOKIE'] = clean_cookies.join('; ')
 
           # Inform about dropped dirty cookies
-          unless dirty_cookies.empty?
+          if !dirty_cookies.empty? && @options[:verbose]
             env['rack.errors'].puts "Ignoring dirty cookies: #{dirty_cookies.inspect}"
           end
         end
