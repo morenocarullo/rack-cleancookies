@@ -7,7 +7,7 @@ module Rack
   module CleanCookies
     # Tests whether a string may be decoded as a form component
     def decodable?(string)
-      URI.decode_www_form_component(string)
+      string && URI.decode_www_form_component(string)
       true
     rescue ArgumentError => e
       /^invalid %-encoding \(.*\)$/.match(e.message) ? false : raise

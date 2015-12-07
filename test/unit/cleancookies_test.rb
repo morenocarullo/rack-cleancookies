@@ -5,6 +5,7 @@ module Rack
     class RackTest < Test::Unit::TestCase
       COOKIE_OK = 'okcookie=okvalue'
       BAD_COOKIE = 'badcookie=1%G15%G%G1335185427000%G%G%G%G%G'
+      BAD_EMPTY_COOKIE = 'badcookie_empty'
 
       def setup
         @errors = StringIO.new
@@ -23,6 +24,10 @@ module Rack
 
         assert_empty @env['HTTP_COOKIE']
         assert_empty @errors.string
+      end
+
+      def test_empty_cookie_doesnt_raise
+        assert_nothing_raised { process BAD_EMPTY_COOKIE }
       end
 
       def test_rack_errors_if_verbose
