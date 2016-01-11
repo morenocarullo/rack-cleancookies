@@ -3,6 +3,10 @@ rack-cleancookies
 
 Clean dirty cookies from Rack environment and prevent Rack applications to stop working because of dirty cookies not conforming to RFC specifications.
 
+Notes
+=====
+This gem is useful only for Rack version <= 1.4.1; newer versions of Rack work correctly with bad encoded cookies.  
+
 Install
 =======
 
