@@ -9,7 +9,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     rack (2.0.8)
-    rake (0.9.2.2)
+    rake (13.0.1)
     test-unit (2.5.2)
 
 PLATFORMS
