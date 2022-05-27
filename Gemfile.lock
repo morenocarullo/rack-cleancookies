@@ -8,7 +8,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    rack (2.2.3)
+    rack (2.2.3.1)
     rake (13.0.1)
     test-unit (2.5.2)
 
